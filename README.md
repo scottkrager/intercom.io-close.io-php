@@ -9,4 +9,4 @@ Any questions please email: scott @ serps.com
 
 ===
 
-<a href="https://dl.dropboxusercontent.com/u/1729176/intercomiocloseio.jpg">
+<img src="https://dl.dropboxusercontent.com/u/1729176/intercomiocloseio.jpg">
