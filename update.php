@@ -33,8 +33,12 @@
 
         $request_loop = curl_init();
         $headers_loop = array('Content-Type: application/json');
-        // find the lead in close.io. Here we do it by a custom_data point from intercom, you'll need to update this
-        curl_setopt($request_loop, CURLOPT_URL, "https://app.close.io/api/v1/lead/?query=company='.$lead_subdomain.'");
+
+        // find the close.io lead where the company matches our custom company data pooint from Intercom.io
+       	$query = 'company=\"{$lead_subdomain}\"';
+       	// limit to find just 1 lead that matches our custom data point from Intercom.io
+        curl_setopt($request_loop, CURLOPT_URL, "https://app.close.io/api/v1/lead/?_fields=id&_limit=1&query='.urlencode($query)'");
+
         curl_setopt($request_loop, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($request_loop, CURLOPT_HTTPHEADER, $headers_loop);
         curl_setopt($request_loop, CURLOPT_BUFFERSIZE, 4096);
